@@ -17,7 +17,10 @@ public class Strings {
     _builder.append("sin caracteres especiales");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("y concatena sin operadores ");
+    _builder.append("y concatena sin operadores.");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("genial!");
     _builder.append(this.n, "\t\t");
     return _builder.toString();
   }

@@ -9,6 +9,7 @@ class Strings {
 		'''este es una cadena compleja que 
 		tiene saltos
 		sin caracteres especiales
-		y concatena sin operadores «n»'''
+		y concatena sin operadores.
+		genial!«n»'''
 	}
 }

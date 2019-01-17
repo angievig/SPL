@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.xtend.XTEND_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Conversor XML/src"/>
+	<classpathentry kind="src" path="Conversor XML/xtend-gen"/>
+	<classpathentry kind="output" path="Conversor XML/bin"/>
+</classpath>
