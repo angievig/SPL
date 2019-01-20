@@ -145,7 +145,7 @@ public class XmlReader {
 	public static void main(String[] arg0) {
 		try {
 			DocumentBuilder builder= DocumentBuilderFactory.newInstance().newDocumentBuilder();
-		    File f = new File("resource/documentoXML3.xml");
+		    File f = new File("Conversor XML/resource/documentoXML1.xml");
 		    Document document = builder.parse(f);
 		    importantXmlDependecy = new ArrayList<XmlDependecy>();
 		    importantXmlElement = new ArrayList<XmlElement>();
