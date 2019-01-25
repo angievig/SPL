@@ -1,4 +1,4 @@
-package xml.converter;
+package variamosXMLParser;
 
 /**
  * This is a class which is responsible for create specific XML converter.
@@ -18,7 +18,7 @@ public class ConverterFactory {
 	public Converter createConverter(String type) {
 
 		if (type.equals("1")) {
-			return new GeneralConverter();
+			return new VariamosXML2HlvlParser();
 		} else {
 			return null;
 		}

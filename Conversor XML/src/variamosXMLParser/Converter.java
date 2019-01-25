@@ -1,4 +1,4 @@
-package xml.converter;
+package variamosXMLParser;
 
 import java.util.ArrayList;
 

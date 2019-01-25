@@ -2,8 +2,16 @@ package xml.element.and.dependecy;
 
 import org.eclipse.xtend2.lib.StringConcatenation;
 
+/**
+ * Documentacion de la clase..
+ * 
+ * modified on 25th January by avillota
+ */
 @SuppressWarnings("all")
 public class Dependecy {
+  /**
+   * *Documentar los atributos
+   */
   private String type;
   
   private String relType;
@@ -14,6 +22,61 @@ public class Dependecy {
   
   private String target;
   
+  /**
+   * Completar la documentacion
+   */
+  public CharSequence generateHLVLCode(final String target, final String source) {
+    CharSequence _switchResult = null;
+    final String relType = this.relType;
+    if (relType != null) {
+      switch (relType) {
+        case "mandatory":
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append("decomposition( ");
+          _builder.append(target);
+          _builder.append(",[");
+          _builder.append(source);
+          _builder.append("])<1>");
+          _switchResult = _builder;
+          break;
+        case "optional":
+          StringConcatenation _builder_1 = new StringConcatenation();
+          _builder_1.append("\t");
+          _builder_1.append("decomposition(");
+          _builder_1.append(target, "\t");
+          _builder_1.append(",[");
+          _builder_1.append(source, "\t");
+          _builder_1.append("])<0>");
+          _switchResult = _builder_1;
+          break;
+        case "requires":
+          StringConcatenation _builder_2 = new StringConcatenation();
+          _builder_2.append("\t");
+          _builder_2.append("implies(");
+          _builder_2.append(source, "\t");
+          _builder_2.append(",");
+          _builder_2.append(target, "\t");
+          _builder_2.append(")");
+          _switchResult = _builder_2;
+          break;
+        case "excludes":
+          StringConcatenation _builder_3 = new StringConcatenation();
+          _builder_3.append("\t");
+          _builder_3.append("mutex(");
+          _builder_3.append(source, "\t");
+          _builder_3.append(",");
+          _builder_3.append(target, "\t");
+          _builder_3.append(")");
+          _switchResult = _builder_3;
+          break;
+      }
+    }
+    return _switchResult;
+  }
+  
+  /**
+   * Getters and Setters
+   */
   public String getType() {
     return this.type;
   }
@@ -52,56 +115,5 @@ public class Dependecy {
   
   public void setTarget(final String target) {
     this.target = target;
-  }
-  
-  public CharSequence generateHLVLCode(final String target, final String source) {
-    boolean _equals = this.relType.equals("mandatory");
-    if (_equals) {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("\t");
-      _builder.append("decomposition( ");
-      _builder.append(target, "\t");
-      _builder.append(",[");
-      _builder.append(source, "\t");
-      _builder.append("])<1>");
-      return _builder;
-    } else {
-      boolean _equals_1 = this.relType.equals("optional");
-      if (_equals_1) {
-        StringConcatenation _builder_1 = new StringConcatenation();
-        _builder_1.append("\t");
-        _builder_1.append("decomposition( ");
-        _builder_1.append(target, "\t");
-        _builder_1.append(",[");
-        _builder_1.append(source, "\t");
-        _builder_1.append("])<0>");
-        return _builder_1;
-      } else {
-        boolean _equals_2 = this.relType.equals("requires");
-        if (_equals_2) {
-          StringConcatenation _builder_2 = new StringConcatenation();
-          _builder_2.append("\t");
-          _builder_2.append("implies( ");
-          _builder_2.append(source, "\t");
-          _builder_2.append(",");
-          _builder_2.append(target, "\t");
-          _builder_2.append(")");
-          return _builder_2;
-        } else {
-          boolean _equals_3 = this.relType.equals("excludes");
-          if (_equals_3) {
-            StringConcatenation _builder_3 = new StringConcatenation();
-            _builder_3.append("\t");
-            _builder_3.append("mutex( ");
-            _builder_3.append(source, "\t");
-            _builder_3.append(",");
-            _builder_3.append(target, "\t");
-            _builder_3.append(")");
-            return _builder_3;
-          }
-        }
-      }
-    }
-    return null;
   }
 }

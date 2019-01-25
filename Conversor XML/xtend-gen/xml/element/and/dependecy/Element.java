@@ -2,6 +2,11 @@ package xml.element.and.dependecy;
 
 import org.eclipse.xtend2.lib.StringConcatenation;
 
+/**
+ * Documentacion de la clase..
+ * 
+ * modified on 25th January by avillota
+ */
 @SuppressWarnings("all")
 public class Element {
   private String name;
@@ -14,6 +19,30 @@ public class Element {
   
   private String bundleType;
   
+  public CharSequence generateHLVLCode() {
+    boolean _equals = this.type.equals("root");
+    if (_equals) {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("\t");
+      _builder.append("coreElements(");
+      _builder.append(this.name, "\t");
+      _builder.append(")");
+      return _builder;
+    } else {
+      if ((this.type.equals("general") || this.type.equals("leaf"))) {
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("\t");
+        _builder_1.append("boolean ");
+        _builder_1.append(this.name, "\t");
+        return _builder_1;
+      }
+    }
+    return null;
+  }
+  
+  /**
+   * Getters and Setters
+   */
   public String getBundleType() {
     return this.bundleType;
   }
@@ -52,26 +81,5 @@ public class Element {
   
   public void setType(final String type) {
     this.type = type;
-  }
-  
-  public CharSequence generateHLVLCode() {
-    boolean _equals = this.type.equals("root");
-    if (_equals) {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("\t");
-      _builder.append("coreElements(");
-      _builder.append(this.name, "\t");
-      _builder.append(")");
-      return _builder;
-    } else {
-      if ((this.type.equals("general") || this.type.equals("leaf"))) {
-        StringConcatenation _builder_1 = new StringConcatenation();
-        _builder_1.append("\t");
-        _builder_1.append("boolena ");
-        _builder_1.append(this.name, "\t");
-        return _builder_1;
-      }
-    }
-    return null;
   }
 }

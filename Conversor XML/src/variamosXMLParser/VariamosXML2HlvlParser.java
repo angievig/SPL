@@ -1,4 +1,4 @@
-package xml.converter;
+package variamosXMLParser;
 
 import java.util.ArrayList;
 import xml.Reader.XmlReader;
@@ -6,14 +6,14 @@ import xml.element.and.dependecy.Dependecy;
 import xml.element.and.dependecy.Element;
 
 /**
- * Esta es una clase que es responsable de extraer información del objeto del
- * elemento XML y del objeto de dependencia XML y convertir esa información en
- * el código HLVL.
+ * Esta es una clase que es responsable de extraer informaciï¿½n del objeto del
+ * elemento XML y del objeto de dependencia XML y convertir esa informaciï¿½n en
+ * el cï¿½digo HLVL.
  * 
  * @version 1.5, 19/01/2019
  * @author Joan David Colina Echeverry
  */
-public class GeneralConverter implements Converter {
+public class VariamosXML2HlvlParser implements Converter {
 
 	private ArrayList<Dependecy> importantXmlDependecy;
 
